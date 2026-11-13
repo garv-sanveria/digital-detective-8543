@@ -1,35 +1,12 @@
-#!/usr/bin/env python3
-"""
-Mission 05 - Number Converter
-A simple terminal tool to convert positive decimal integers into
-binary and hexadecimal representations.
-"""
+# Number converter program for Mission 5
 
+# Ask the user to enter a decimal number
+decimal_number = int(input("Enter a decimal number: "))
 
-def convert_number():
-    print("=== Number Base Converter ===")
-    user_input = input("Enter a positive decimal integer: ").strip()
+# Convert to binary and hexadecimal
+binary_number = bin(decimal_number)
+hex_number = hex(decimal_number)
 
-    try:
-        decimal_val = int(user_input)
-        if decimal_val < 0:
-            print("Please enter a positive integer.")
-            return
-
-        binary_rep = bin(decimal_val)[2:]
-        hex_rep = hex(decimal_val)[2:].upper()
-
-        print(f"\nResults for decimal: {decimal_val}")
-        print(f"  Binary:      {binary_rep} (with prefix: {bin(decimal_val)})")
-        print(f"  Hexadecimal: {hex_rep} (with prefix: {hex(decimal_val)})")
-
-    except ValueError:
-        print("Invalid input! Please enter a valid decimal whole number.")
-
-
-def main():
-    convert_number()
-
-
-if __name__ == "__main__":
-    main()
+# Display the results
+print("Binary:", binary_number)
+print("Hexadecimal:", hex_number)

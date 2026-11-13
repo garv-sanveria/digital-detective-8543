@@ -59,19 +59,19 @@ All outputs matched my hand calculations exactly.
 ---
 
 ### Task 5.3 — Build a small number converter
-I implemented `number_converter.py` which prompts the user for a decimal number and prints the binary and hexadecimal equivalents.
+I wrote `number_converter.py`, which asks the user for a decimal number using `input()`, converts it using `int()`, and then uses Python's built-in `bin()` and `hex()` functions to display the results.
 
 **Test Runs:**
 
 | Test number | Binary output | Hexadecimal output |
 | :---: | :--- | :--- |
-| **42** | `101010` (prefixed: `0b101010`) | `2A` (prefixed: `0x2a`) |
-| **128** | `10000000` (prefixed: `0b10000000`) | `80` (prefixed: `0x80`) |
-| **255** | `11111111` (prefixed: `0b11111111`) | `FF` (prefixed: `0xff`) |
+| **42** | `0b101010` | `0x2a` |
+| **128** | `0b10000000` | `0x80` |
+| **255** | `0b11111111` | `0xff` |
 
 **Explanation of functions:**
-- `bin(x)`: Converts an integer `x` into a binary string prefixed with `'0b'`.
-- `hex(x)`: Converts an integer `x` into a hexadecimal string prefixed with `'0x'`.
+- `bin(x)`: Converts an integer `x` into its binary equivalent string (prefixed with `'0b'`).
+- `hex(x)`: Converts an integer `x` into its hexadecimal equivalent string (prefixed with `'0x'`).
 
 ---
 
@@ -86,10 +86,10 @@ I implemented `number_converter.py` which prompts the user for a decimal number 
   The emoji 👋 (Unicode code point `U+1F44B`) or the Indian Rupee symbol `₹` (`U+20B9`). Basic ASCII only supports 128 characters (0–127), so modern systems use Unicode (UTF-8) which can encode over a million characters across multiple bytes.
 
 ## 5. Difficulties faced
-When slicing the `0b` or `0x` prefixes in Python (`bin(num)[2:]`), single-digit or zero inputs need careful handling so the output doesn't return an empty string.
+When I first wrote `bin(input("Enter number: "))`, Python threw a `TypeError` because `input()` returns a string instead of an integer.
 
 ## 6. How I resolved them
-I tested with `0` and small positive integers and formatted the output to show both the clean string and the standard Python prefixed representation.
+I wrapped `input()` with `int()` so the text entered by the user is properly converted into an integer before being passed to `bin()` and `hex()`.
 
 ## 7. Evidence / files
 - `mission-05-numbers-data/README.md` (this file)
