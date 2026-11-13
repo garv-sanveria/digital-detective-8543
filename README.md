@@ -50,5 +50,13 @@ It takes a positive decimal integer and prints its binary and hexadecimal repres
 
 ---
 
+## My Learning
+Working through these missions has given me several key practical takeaways:
+1. **The power of the CLI:** Using terminal commands, flags, redirection (`>>`), and pipes (`|`) makes file management and process inspection faster and more reliable than relying only on graphical windows.
+2. **Operating system isolation:** Understanding how the OS kernel manages memory, assign PIDs to processes, and enforces permission bits (`rwx`) explains why multitasking works reliably without one faulty program crashing the whole computer.
+3. **Data representations:** Doing hand conversions between decimal, binary, and hexadecimal gave me a concrete understanding of how data, memory addresses, and characters (ASCII/UTF-8) are actually stored at the lowest level.
+
+---
+
 ## Privacy & Security Note
 In accordance with assignment guidelines, no real passwords, API tokens, or identifying network details are tracked in this repository. Sensitive identifiers (like user account paths or private IP addresses) are redacted with `[redacted]` where necessary.
